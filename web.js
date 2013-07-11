@@ -5,8 +5,8 @@ var fs = require('fs');
 var app = express.createServer(express.logger());
 
 app.get('/', function(request, response) {
-console.log("the file should be here");
- response.send('Hello World 2!');
+var buf = newBuffer(fs.readFileSync('file.html'),'utf-8');
+  response.send(buf.toString());
 });
 
 var port = process.env.PORT || 5000;
